@@ -1,0 +1,10 @@
+.move-right {
+    position: absolute;
+    left: 350px;
+}
+
+details {
+    margin: 5px;
+    border: 1px solid gray;
+    background-color: palegreen;
+}

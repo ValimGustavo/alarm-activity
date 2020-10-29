@@ -1,0 +1,16 @@
+<div class="border">
+  <h1>Meta</h1>
+  <form>
+    <label for="title">titulo da meta</label>
+    <input [(ngModel)]="goal.title" name="title"  placeholder='De um titulo para a meta' id="title" />
+  
+    <label for="description">Descriçao da meta</label>
+    <input [(ngModel)]="goal.description" name="description" placeholder='De uma descriçao para meta' id="description" />
+    
+    <p>Tempo necessario para executar</p>
+    <app-time-create (event)='getTime($event)'></app-time-create>
+    <button (click)='createGoal()'>Criar</button>
+  
+  </form>
+  
+</div>

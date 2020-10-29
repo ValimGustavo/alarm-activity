@@ -1,0 +1,10 @@
+<div class="container">
+
+    <label for="start">Começa</label>
+    <input [(ngModel)]="time.start" type="time" name="start" id="start" />
+    
+    <label for="end">Termina</label>
+    <input [(ngModel)]="time.ends" type="time" name="end" id="end" />
+    <button (click)='save()'>Salvar</button>
+
+</div>

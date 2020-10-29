@@ -1,0 +1,39 @@
+<div class="container">
+  <p>Criar atividade</p>
+  <form>
+    <input id="title" name="title" [(ngModel)]="activity.title"/>
+    <input id="description" name="description" [(ngModel)]="activity.description"/>
+
+    <button (click)="createGoal()">Criar uma meta</button>
+    <div class="move-right">
+      <app-goal-create
+        (event)="goalListen($event)"
+        *ngIf="showCreateGoal"
+      ></app-goal-create>
+    </div>
+    <div *ngFor="let goal of activity.goals">
+      <details>
+        <summary>
+          {{ goal.title }}
+          <button>Editar</button> 
+          <button>Excluir</button>
+        </summary>
+        <p>{{ goal.description }}</p>
+      </details>
+    </div>
+
+    <p>Selecione se ha uma atividade anterior</p>
+    <select id="pre-activity">
+      <option>pre-activity1</option>
+      <option>pre-activity2</option>
+    </select>
+
+    <p>Selecione se ha uma atividade posterior</p>
+    <select id="pos-activity">
+      <option>pos-activity1</option>
+      <option>pos-activity2</option>
+    </select>
+
+    <button (click)="save()">Salvar</button>
+  </form>
+</div>
