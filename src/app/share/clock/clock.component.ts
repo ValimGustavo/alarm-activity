@@ -1,3 +1,5 @@
+import { SpeechTextService } from './../../services/speech-text/speech-text.service';
+import { BackgroundService } from './../../services/background/background.service';
 import { ClockService } from './../../services/clock/clock.service';
 import { Clock } from './../../../../../interfaces/clock.interface';
 import { Component, OnInit } from '@angular/core';
@@ -10,7 +12,9 @@ import { Component, OnInit } from '@angular/core';
 export class ClockComponent implements OnInit {
 
   constructor(
-    private clockService: ClockService
+    private clockService: ClockService,
+    private backgroundService:BackgroundService,
+    private speechTextService:SpeechTextService
   ) {
     
    }
@@ -18,15 +22,17 @@ export class ClockComponent implements OnInit {
   clock: Clock
   running:any
   ngOnInit(): void {
-    
-
-    this.clock = this.clockService.time
-
-    this.running = setInterval(() => {
-      this.clock = this.clockService.running()
-    }, 1000)
+    this.clockService.getTime.subscribe((clock)=> {
+      this.clock = clock
+    })
   }
 
+  NameActivity(){
+    this.backgroundService.checkActivity().subscribe(activity => {
+      console.log(activity)
+      this.speechTextService.speak(activity.title)
+    })
+  }
 
 
 }

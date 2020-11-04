@@ -18,7 +18,6 @@ export class ActivityReadComponent implements OnInit {
   ngOnInit(): void {
     this.activityService.read()
       .subscribe(activities => {
-        console.log(activities)
         this.activities = activities
       })
     

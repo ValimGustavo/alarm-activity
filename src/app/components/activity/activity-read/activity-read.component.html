@@ -1,7 +1,9 @@
 <h1>Atividades</h1>
 <div *ngFor="let activity of activities">
-    <details>
-        <summary>{{ activity.title }}</summary>
-        <p> {{ activity.description }}   </p>
-    </details>
+  <details>
+    <summary>{{ activity.title }}</summary>
+    <p>{{ activity.description }}</p>
+    <p>{{ activity.time.start }}</p>
+    <p>{{ activity.time.ends }}</p>
+  </details>
 </div>

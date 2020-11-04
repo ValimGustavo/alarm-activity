@@ -1,5 +1,5 @@
 import { Component, OnInit, Output, EventEmitter } from '@angular/core';
-import { Goal } from  '../../../../../../interfaces/Goal.interface'
+import { Goal } from  '../../../../../../interfaces/goal.interface'
 import { Time } from '../../../../../../interfaces/time.interface';
 
 @Component({

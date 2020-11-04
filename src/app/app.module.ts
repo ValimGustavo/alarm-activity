@@ -13,6 +13,7 @@ import { MatListModule } from '@angular/material/list'
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 import { ActivityReadComponent } from './components/activity/activity-read/activity-read.component';
 import { ClockComponent } from './share/clock/clock.component'
+import { CommonModule } from '@angular/common';
 
 @NgModule({
   declarations: [
@@ -31,7 +32,8 @@ import { ClockComponent } from './share/clock/clock.component'
     HttpClientModule,
     MatSidenavModule,
     MatListModule,
-    BrowserAnimationsModule
+    BrowserAnimationsModule,
+    CommonModule
   ],
   providers: [],
   bootstrap: [AppComponent]

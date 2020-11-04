@@ -1,5 +1,5 @@
 import { ActivityService } from './../../../services/activity.service';
-import { Goal } from './../../../../../../interfaces/Goal.interface';
+import { Goal } from '../../../../../../interfaces/goal.interface';
 import { Activity } from './../../../../../../interfaces/activity.interface';
 import { Component, OnChanges, OnInit } from '@angular/core';
 import { HttpClient } from '@angular/common/http';
@@ -40,7 +40,12 @@ export class ActivityCreateComponent implements OnInit, OnChanges {
     console.log(this.activity)
   }
   save() {
-    
+    const startActivityTime = this.activity.goals[0].timeForExecution.start
+    const GoalsCount = this.activity.goals.length
+    const endActivityTime = this.activity.goals[GoalsCount - 1].timeForExecution.ends
+
+    this.activity.time.start = startActivityTime
+    this.activity.time.ends = endActivityTime
     this.activityService.save(this.activity);
   }
 
